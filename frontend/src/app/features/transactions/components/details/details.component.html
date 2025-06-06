@@ -1,0 +1,48 @@
+<div class="transaction-details">
+  <h1>Details</h1>
+  @if(details){
+      <div class="top-card">
+          <span
+            class="amount"
+            [ngClass]="{ 'positive-amount': isPositive }"
+          >
+            EUR {{ isPositive ? "+ " : ""
+            }}{{
+              details.amount
+                | convertToEur : details.currencyCode : (details.currencyRate || 0)
+            }}
+          </span>
+          <span> {{details.otherParty?.name}}</span>
+          
+      </div>
+    
+      <div class="card">
+        <app-bank-transfer-details [date]="details.timestamp" [isPositive]="isPositive" [bankAccount]="details.otherParty?.iban" [accountName]="details.otherParty?.name"></app-bank-transfer-details>
+      </div>
+    
+      <div class="card">
+        <div class="card-header">
+           <h3>Description</h3>
+           <hr class="divider-inline margin-block-end-200" />
+
+        <div class="card-body">
+            <p>Name: {{ details.otherParty?.name }}</p>
+            <p>Description: {{ details.description }}</p>
+            @if(details.currencyCode !== 'EUR'){
+                <p class="currency-info">
+                    Total amount in {{details.currencyCode}}: {{ details.amount }}<br />
+                    Converted at a rate of {{ details.currencyRate }}
+                </p>
+            }
+        </div>
+      </div>
+    </div>
+    
+    @if(!isPositive){
+        <div class="card">
+        <app-payment-request [bankAccountName]="details.otherParty?.name" [totalAmount]="details.amount"></app-payment-request>
+    </div>
+    }
+  }
+
+<div class="button" (click)="goToTransactionTimeline()">Back to transaction timeline</div>

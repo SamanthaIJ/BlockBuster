@@ -1,0 +1,31 @@
+.amount {
+    font-size: 1rem;
+
+    &.positive-amount {
+        background-color: var(--green-light);
+        border-radius: 5px;
+        padding: 5px;
+    }
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 280px;
+    margin-bottom: 20px;
+}
+
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 0.5rem 0;
+}

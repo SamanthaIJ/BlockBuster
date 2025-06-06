@@ -1,0 +1,38 @@
+
+@import '../../../../../styles/shared.scss';
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-header {
+    margin-bottom: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    display:flex;
+
+    .date {
+        color: gray;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    .currency {
+        font-size: 0.7rem;
+        color: #666;
+    }
+}
+
+.transaction-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.other-party {
+    font-size: 1rem;
+    color: #666;
+}
+

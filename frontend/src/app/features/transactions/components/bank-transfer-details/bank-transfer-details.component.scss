@@ -1,0 +1,19 @@
+.bank-transfer-details {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Two columns: labels and accounts */
+    grid-auto-rows: auto; /* Automatically adjust row height based on content */
+    gap: 1.5rem 2rem; /* Add spacing between rows and columns */
+
+    .label {
+        text-align: left; /* Align labels to the left */
+        font-weight: bold; /* Optional: Make labels bold */
+    }
+
+    .account {
+        display: flex;
+        flex-direction: column; /* Stack account details vertically */
+        p {
+            margin-bottom: 0px; /* Remove default margin from <p> tags */
+        }
+    }
+}

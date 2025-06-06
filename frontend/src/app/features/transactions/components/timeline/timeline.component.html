@@ -1,0 +1,46 @@
+<div class="timeline">
+  <h1>Transactions</h1>
+
+  <app-bankaccount></app-bankaccount>
+  @for (day of transactionsByDay; track day) {
+  <div class="card">
+    <div class="card-header">
+      <span class="date">{{ day.id | date : "d MMMM yyyy" }}</span>
+      <span class="currency">EUR</span>
+    </div>
+
+    <div class="card-body">
+      @for(transaction of day.transactions; track transaction; let index =
+      $index) {
+      <ng-container class="transaction">
+        <div
+          class="transaction-row"
+          (click)="goToTransactionDetail(transaction)"
+        >
+          @if(transaction.otherParty) {
+          <span class="other-party">{{ transaction.otherParty.name }}</span>
+          } @else {
+          <span class="other-party">No name</span>
+          }
+          <span
+            class="amount"
+            [ngClass]="{ 'positive-amount': transaction.amount >= 0 }"
+          >
+            {{ transaction.amount >= 0 ? "+ " : ""
+            }}{{
+              transaction.amount
+                | convertToEur
+                  : transaction.currencyCode
+                  : transaction?.currencyRate || 0
+            }}
+          </span>
+        </div>
+        @if(index < day.transactions.length - 1) {
+        <hr />
+        }
+      </ng-container>
+      }
+    </div>
+  </div>
+  }
+</div>

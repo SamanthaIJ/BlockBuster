@@ -1,0 +1,45 @@
+<section class="padding-inline-100">
+    <div class="item" tabindex="0">
+        <h3>Payment request</h3>
+    </div>
+    <hr class="divider-inline margin-block-end-200" />
+
+<span class="payment-request" (click)="openModal()">Split the bill</span>
+
+<app-modal
+    [title]="'Payment request'"
+    [isVisible]="isModalVisible"
+    (closeModal)="closeModal()"
+>
+    <div class="modal-content">
+        <p class="modal-header">
+            <strong>{{ bankAccountName() }}</strong> | EUR {{ totalAmount() }}
+        </p>
+        <p class="modal-description">Choose with how many you want to go Dutch</p>
+        <div class="modal-input-group">
+            <input
+                type="number"
+                [value]="numberOfPeople"
+                (input)="updateNumberOfPeople($event)"
+                min="2"
+                class="modal-input"
+            />
+            <button class="modal-button" (click)="decreasePeople()">-</button>
+            <button class="modal-button" (click)="increasePeople()">+</button>
+        </div>
+        <div class="modal-checkbox-group">
+            <label class="modal-checkbox-label">
+                <input
+                    type="checkbox"
+                    [checked]="includeSelf"
+                    (change)="toggleIncludeSelf($event)"
+                />
+                Include me
+            </label>
+        </div>
+        <p class="modal-amount">
+           Per person: EUR {{ amountPerPerson | number: '1.2-2' }}
+        </p>
+        <button class="modal-submit" (click)="submitRequest()">Make request</button>
+    </div>
+</app-modal>

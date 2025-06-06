@@ -1,0 +1,33 @@
+@import '../../../../../styles/shared.scss';
+
+.transaction-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.top-card {
+    margin-bottom: 1rem;
+    align-items: center; /* Vertically align items */
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    height: 80px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-direction: column; /* Stack child elements vertically */
+    gap: 0.5rem; /* Add space between child elements */
+}
+
+.button {
+    padding: 5px 10px;
+    font-size: 1rem;
+    background-color: var(--orange-dark);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px;
+}

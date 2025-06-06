@@ -1,0 +1,19 @@
+@let positive = isPositive();
+<p class="date">{{date() | date: 'd MMMM yyyy | HH:mm' }}</p>
+<hr />
+<div class="bank-transfer-details">
+    <div class="label">
+        <p>From</p>
+    </div>
+        <div class="account">
+            <p>{{ positive ? formattedBankAccount : BANK_ACCOUNT_NUMBER }}</p>
+            <p>{{ positive ? accountName() : BANK_ACCOUNT_NAME }}</p>
+        </div>
+        <div class="label">
+            <p>To</p>
+        </div>
+        <div class="account">
+            <p>{{ positive ? BANK_ACCOUNT_NUMBER : formattedBankAccount }}</p>
+            <p>{{ positive ? BANK_ACCOUNT_NAME : accountName() }}</p>
+        </div>   
+</div>

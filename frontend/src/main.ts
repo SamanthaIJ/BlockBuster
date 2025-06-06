@@ -1,6 +1,22 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
+import { Routes, provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
+import { TimelineComponent } from './app/features/transactions/components/timeline/timeline.component';
+import { DetailsComponent } from './app/features/transactions/components/details/details.component';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+const routes: Routes = [
+  { path: 'timeline', component: TimelineComponent },
+  { 
+    path: 'transaction-detail/:id', 
+    component: DetailsComponent, 
+  },
+  { path: '', redirectTo: '/timeline', pathMatch: 'full' },
+];
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter(routes), 
+    provideHttpClient(),
+  ],
+}).catch((err) => console.error(err));
