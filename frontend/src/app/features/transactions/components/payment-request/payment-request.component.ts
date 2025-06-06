@@ -4,13 +4,11 @@ import { ModalComponent } from '../modal/modal.component';
 import localeNl from '@angular/common/locales/nl'; 
 
 @Component({
-  selector: 'app-payment-request',
-  standalone: true,
-  templateUrl: './payment-request.component.html',
-  styleUrls: ['./payment-request.component.scss'],
-  imports: [CommonModule, ModalComponent],
-  providers: [{ provide: LOCALE_ID, useValue: 'nl-NL' }], 
-
+    selector: 'app-payment-request',
+    templateUrl: './payment-request.component.html',
+    styleUrls: ['./payment-request.component.scss'],
+    imports: [CommonModule, ModalComponent],
+    providers: [{ provide: LOCALE_ID, useValue: 'nl-NL' }]
 })
 export class PaymentRequestComponent {
     totalAmount = input.required<number>();

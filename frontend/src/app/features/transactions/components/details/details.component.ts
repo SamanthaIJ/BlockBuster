@@ -8,11 +8,10 @@ import { PaymentRequestComponent } from '../payment-request/payment-request.comp
 import { Transaction } from '../../configs/transaction.types';
 
 @Component({
-  selector: 'app-details',
-  standalone: true,
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss'],
-  imports: [CommonModule, ConvertToEurPipe, BankTransferDetailsComponent, PaymentRequestComponent],
+    selector: 'app-details',
+    templateUrl: './details.component.html',
+    styleUrls: ['./details.component.scss'],
+    imports: [CommonModule, ConvertToEurPipe, BankTransferDetailsComponent, PaymentRequestComponent]
 })
 export class DetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute,

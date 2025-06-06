@@ -7,11 +7,10 @@ import { BankaccountComponent } from '../bankaccount/bankaccount.component';
 import { Day, Transaction, TransactionsData } from '../../configs/transaction.types';
 
 @Component({
-  selector: 'app-timeline',
-  standalone: true,
-  templateUrl: './timeline.component.html',
-  styleUrls: ['./timeline.component.scss'],
-  imports: [CommonModule, ConvertToEurPipe, BankaccountComponent],
+    selector: 'app-timeline',
+    templateUrl: './timeline.component.html',
+    styleUrls: ['./timeline.component.scss'],
+    imports: [CommonModule, ConvertToEurPipe, BankaccountComponent]
 })
 export class TimelineComponent implements OnInit {
   transactionsByDay: Day[] = [];

@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { BANK_ACCOUNT_NUMBER, BANK_ACCOUNT_NAME } from '../../configs/constants';
 
 @Component({
-  selector: 'app-bank-transfer-details',
-  standalone: true,
-  templateUrl: './bank-transfer-details.component.html',
-  styleUrls: ['./bank-transfer-details.component.scss'],
-  imports: [CommonModule],
+    selector: 'app-bank-transfer-details',
+    templateUrl: './bank-transfer-details.component.html',
+    styleUrls: ['./bank-transfer-details.component.scss'],
+    imports: [CommonModule]
 })
 export class BankTransferDetailsComponent {
     bankAccount = input<string>();
