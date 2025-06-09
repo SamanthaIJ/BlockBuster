@@ -5,6 +5,7 @@ import localeNl from '@angular/common/locales/nl';
 
 @Component({
     selector: 'app-payment-request',
+    standalone: true,
     templateUrl: './payment-request.component.html',
     styleUrls: ['./payment-request.component.scss'],
     imports: [CommonModule, ModalComponent],

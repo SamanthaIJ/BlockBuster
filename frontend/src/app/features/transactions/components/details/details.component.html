@@ -26,7 +26,9 @@
            <hr class="divider-inline margin-block-end-200" />
 
         <div class="card-body">
-            <p>Name: {{ details.otherParty?.name }}</p>
+          @if(details.otherParty){
+            <p>Name: {{ details.otherParty.name }}</p>
+          }
             <p>Description: {{ details.description }}</p>
             @if(details.currencyCode !== 'EUR'){
                 <p class="currency-info">
@@ -45,4 +47,4 @@
     }
   }
 
-<div class="button" (click)="goToTransactionTimeline()">Back to transaction timeline</div>
+<div class="button" (click)="goToTransactionTimeline()">Back to timeline</div>

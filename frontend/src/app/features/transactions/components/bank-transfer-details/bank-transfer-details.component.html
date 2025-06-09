@@ -1,19 +1,25 @@
-@let positive = isPositive();
-<p class="date">{{date() | date: 'd MMMM yyyy | HH:mm' }}</p>
+<p class="date">{{ date() | date : "d MMMM yyyy | HH:mm" }}</p>
 <hr />
 <div class="bank-transfer-details">
+  @let details = getAccountDetails(); 
+  
+  @if(details.from.account && details.from.accountName){
     <div class="label">
         <p>From</p>
     </div>
-        <div class="account">
-            <p>{{ positive ? formattedBankAccount : BANK_ACCOUNT_NUMBER }}</p>
-            <p>{{ positive ? accountName() : BANK_ACCOUNT_NAME }}</p>
-        </div>
-        <div class="label">
-            <p>To</p>
-        </div>
-        <div class="account">
-            <p>{{ positive ? BANK_ACCOUNT_NUMBER : formattedBankAccount }}</p>
-            <p>{{ positive ? BANK_ACCOUNT_NAME : accountName() }}</p>
-        </div>   
+    <div class="account">
+        <p>{{ details.from.account }}</p>
+        <p>{{ details.from.accountName }}</p>
+    </div>
+  } 
+  
+  @if(details.to.account && details.to.accountName){
+    <div class="label">
+        <p>To</p>
+    </div>
+    <div class="account">
+        <p>{{ details.to.account }}</p>
+        <p>{{ details.to.accountName }}</p>
+    </div>
+  }
 </div>

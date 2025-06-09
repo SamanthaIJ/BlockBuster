@@ -9,6 +9,7 @@ import { Transaction } from '../../configs/transaction.types';
 
 @Component({
     selector: 'app-details',
+    standalone: true,
     templateUrl: './details.component.html',
     styleUrls: ['./details.component.scss'],
     imports: [CommonModule, ConvertToEurPipe, BankTransferDetailsComponent, PaymentRequestComponent]

@@ -1,6 +1,6 @@
 export interface Transaction {
     id: number;
-    timestamp: Date;
+    timestamp: Date | string;
     amount: number;
     currencyCode: string;
     currencyRate?: number;

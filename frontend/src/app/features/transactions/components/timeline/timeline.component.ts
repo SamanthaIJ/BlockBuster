@@ -8,6 +8,7 @@ import { Day, Transaction, TransactionsData } from '../../configs/transaction.ty
 
 @Component({
     selector: 'app-timeline',
+    standalone: true,
     templateUrl: './timeline.component.html',
     styleUrls: ['./timeline.component.scss'],
     imports: [CommonModule, ConvertToEurPipe, BankaccountComponent]
