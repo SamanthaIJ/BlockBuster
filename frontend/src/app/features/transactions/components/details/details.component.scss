@@ -18,15 +18,15 @@
 
 .top-card {
     margin-bottom: 1rem;
-    align-items: center; /* Vertically align items */
+    align-items: center;
     display: flex;
     justify-content: center;
     background-color: white;
     height: 80px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex-direction: column; /* Stack child elements vertically */
-    gap: 0.5rem; /* Add space between child elements */
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .button {

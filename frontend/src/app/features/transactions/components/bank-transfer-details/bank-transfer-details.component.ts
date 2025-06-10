@@ -16,7 +16,7 @@ export class BankTransferDetailsComponent {
     date = input<Date| string>();
 
     get formattedBankAccount (): string {
-        return this.bankAccount()?.replace(/(.{4})(.{4})(.{4})(.{4})/, '$1 $2 $3 $4') || '';
+        return this.bankAccount()?.replace(/(.{4})(.{4})(.{4})(.{4})(.{2})/, '$1 $2 $3 $4 $5') || '';
     }
 
     getAccountDetails = computed(() => {

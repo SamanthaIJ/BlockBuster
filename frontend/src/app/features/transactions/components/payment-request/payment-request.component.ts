@@ -24,9 +24,11 @@ export class PaymentRequestComponent {
     includeSelf = true;
 
   get amountPerPerson(): number {
-    return this.includeSelf
+    const amount = this.includeSelf
       ? Math.abs(this.totalAmount()) / this.numberOfPeople
       : Math.abs(this.totalAmount()) / (this.numberOfPeople - 1);
+
+      return Math.round(amount * 100) / 100;
   }
 
   openModal() {
@@ -60,7 +62,7 @@ export class PaymentRequestComponent {
 
   submitRequest() {
     console.log('Payment request submitted for ', this.numberOfPeople, ' amount: ', this.amountPerPerson );
-    console.log('sorry, not going to make this work for now');
+    console.log('sorry, not going to make this work for now. Greetings from Spain!');
     this.closeModal();
   }
 }

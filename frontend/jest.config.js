@@ -6,7 +6,7 @@ module.exports = {
         '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
     },
     transformIgnorePatterns: [
-        'node_modules/(?!.*\\.mjs$)', 
+        'node_modules/(?!@angular/common/locales/*|.*\\.mjs$)', 
     ],
     moduleFileExtensions: ['ts', 'mjs', 'js', 'html'],
     moduleNameMapper: {
